@@ -12,7 +12,7 @@ const crearUsuario = async (req, res) => {
 }
 
 const actualizarUsuario = async (req, res) => {
-  const usuario = await Usuario.findByIdAndUpdate(req.params.id, req.body, { new: true })
+  const usuario = await Usuario.findByIdAndUpdate(req.params.id, req.body, { returnDocument: 'after' })
   res.json(usuario)
 }
 
